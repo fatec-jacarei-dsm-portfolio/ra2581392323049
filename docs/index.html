@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="R2fyaun8AOSwyKpzTh6ojU2EOLslikZYySacV_ewLxE" />
+    <meta
+      name="google-site-verification"
+      content="R2fyaun8AOSwyKpzTh6ojU2EOLslikZYySacV_ewLxE"
+    />
     <title>Isaac Souza | Front-End Developer</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap"
@@ -30,7 +33,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0.5rem 0;
+        padding: 0.25rem 0;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
       }
       .brand {
@@ -72,14 +75,14 @@
         width: 100%;
       }
       .hero {
-        min-height: 100vh;
+        min-height: 50vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         position: relative;
-        padding-top: 80px;
+        padding-top: 60px;
         background: #18181b;
         overflow: hidden;
       }
@@ -323,6 +326,16 @@
         height: 180px;
         object-fit: cover;
         background: #111;
+        display: block;
+      }
+      .project-img[src="estudaai_logo.png"] {
+        width: 340px;
+        height: 220px;
+        object-fit: contain;
+        background: black;
+        padding: 30px;
+        object-position: center center;
+        margin: 0 auto;
         display: block;
       }
       .project-content {
@@ -773,6 +786,18 @@
           <h3>Python</h3>
           <p>Scripts, automação e análise de dados.</p>
         </div>
+        <div class="card">
+          <div class="icon">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+              alt="Flutter"
+              width="36"
+              height="36"
+            />
+          </div>
+          <h3>Flutter</h3>
+          <p>Desenvolvimento mobile multiplataforma.</p>
+        </div>
       </div>
     </section>
     <section class="projects-section" id="projetos">
@@ -895,6 +920,44 @@
                   src="https://placehold.co/180x340/38bdf8/fff?text=Histórico"
                   alt="Tela Histórico"
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-img" src="estudaai_logo.png" alt="EstudaAí" />
+          <div class="project-content">
+            <div class="project-title">EstudaAí</div>
+            <span class="project-type"
+              >Android • FastAPI • IA • Gamificação</span
+            >
+            <div class="project-desc">
+              Plataforma educacional gamificada com IA que combina aprendizado
+              personalizado, sistema de XP e níveis, para tornar os estudos mais
+              eficientes e divertidos.
+            </div>
+            <button class="project-link" onclick="toggleDetails(this)">
+              Ver Projeto
+            </button>
+            <div class="project-details" style="display: none">
+              <p>
+                <strong>Disponível na Google Play Store:</strong><br />
+                App educacional com lições personalizadas por IA, sistema
+                gamificado com XP e conquistas, conteúdo para todos os níveis
+                educacionais.
+              </p>
+              <div style="margin-top: 12px">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.estudaai.app"
+                  target="_blank"
+                  style="
+                    color: #4caf50;
+                    text-decoration: none;
+                    font-weight: 600;
+                  "
+                >
+                  📱 Baixar na Play Store
+                </a>
               </div>
             </div>
           </div>
