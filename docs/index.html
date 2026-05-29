@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,21 @@
       name="google-site-verification"
       content="R2fyaun8AOSwyKpzTh6ojU2EOLslikZYySacV_ewLxE"
     />
-    <title>Isaac Souza | Front-End Developer</title>
+    <title>Isaac Souza | Desenvolvedor Full Stack</title>
+    <meta
+      name="description"
+      content="Portfólio de Isaac Souza — Desenvolvedor Full Stack. Projetos acadêmicos (Fatec DSM), apps na Play Store e experiência em React, Flutter, Node.js e Azure."
+    />
+    <meta property="og:title" content="Isaac Souza | Desenvolvedor Full Stack" />
+    <meta
+      property="og:description"
+      content="Portfólio profissional com projetos acadêmicos, pessoais e competências em desenvolvimento full stack."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://fatec-jacarei-dsm-portfolio.github.io/ra2581392323049/"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap"
       rel="stylesheet"
@@ -15,6 +29,19 @@
     <style>
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 52px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
       }
       body {
         margin: 0;
@@ -33,20 +60,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0.25rem 0;
+        padding: 0.35rem 0.75rem;
+        min-height: 44px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
       }
       .brand {
         font-weight: 900;
-        font-size: 1.5rem;
+        font-size: 1.05rem;
         color: #38bdf8;
-        letter-spacing: 1px;
-        margin-right: 2rem;
+        letter-spacing: 0.5px;
+        margin-right: 1.25rem;
         font-family: "Poppins", Arial, sans-serif;
       }
       nav ul {
         display: flex;
-        gap: 2rem;
+        gap: 1.1rem;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -55,8 +83,8 @@
         color: #fff;
         text-decoration: none;
         font-weight: 600;
-        font-size: 1rem;
-        letter-spacing: 1px;
+        font-size: 0.82rem;
+        letter-spacing: 0.5px;
         transition: color 0.2s;
         position: relative;
       }
@@ -74,15 +102,24 @@
       nav a:hover::after {
         width: 100%;
       }
+      nav a:focus-visible,
+      .accordion-header:focus-visible,
+      .project-link:focus-visible,
+      .scroll-down:focus-visible,
+      .about-links a:focus-visible,
+      .contact-links a:focus-visible {
+        outline: 2px solid #38bdf8;
+        outline-offset: 3px;
+      }
       .hero {
-        min-height: 50vh;
+        min-height: 34vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         position: relative;
-        padding-top: 60px;
+        padding: 52px 16px 48px;
         background: #18181b;
         overflow: hidden;
       }
@@ -140,10 +177,10 @@
         }
       }
       .hero-title {
-        font-size: 5vw;
+        font-size: clamp(2rem, 4vw, 3.2rem);
         font-weight: 900;
         margin: 0;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         color: #fff;
         text-shadow: 0 4px 32px #000a;
         z-index: 1;
@@ -152,10 +189,10 @@
         animation: heroFadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
       }
       .hero h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 400;
-        margin: 1.5rem 0 0.5rem 0;
-        letter-spacing: 2px;
+        margin: 0.75rem 0 0;
+        letter-spacing: 1.5px;
         color: #e0e0e0;
         animation: fadeIn 1.8s cubic-bezier(0.4, 0, 0.2, 1);
       }
@@ -169,11 +206,11 @@
       .scroll-down {
         position: absolute;
         left: 50%;
-        bottom: 32px;
+        bottom: 16px;
         transform: translateX(-50%);
         cursor: pointer;
         animation: bounce 2s infinite;
-        font-size: 2rem;
+        font-size: 1.35rem;
         color: #38bdf8;
         background: none;
         border: none;
@@ -212,25 +249,38 @@
         }
       }
       section {
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 80px 24px 40px 24px;
+        padding: 64px 24px 36px;
         color: #fff;
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 36px;
+      }
+      .section-title {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        color: #fff;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        border-bottom: 4px solid #38bdf8;
+        display: inline-block;
+        padding-bottom: 8px;
       }
       .expertise-cards {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 24px;
-        max-width: 1100px;
+        grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+        gap: 16px;
+        max-width: 1200px;
         margin: 0 auto;
       }
       .card {
         background: #232329;
         border: 1px solid #333;
         border-radius: 14px;
-        padding: 18px 10px;
+        padding: 16px 10px;
         min-width: 0;
-        min-height: 140px;
+        min-height: 120px;
         color: #fff;
         box-shadow: 0 2px 12px #0002;
         display: flex;
@@ -279,80 +329,153 @@
       }
       .projects-section {
         background: #18181b;
-        padding: 80px 0 40px 0;
+        padding: 64px 0 36px;
+      }
+      .projects-header-wrap {
+        text-align: center;
+        margin-bottom: 32px;
       }
       .projects-title {
-        text-align: center;
-        font-size: 3rem;
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
         color: #fff;
-        margin-bottom: 48px;
+        margin: 0;
         font-family: "Poppins", sans-serif;
         border-bottom: 4px solid #38bdf8;
         display: inline-block;
         padding-bottom: 8px;
       }
-      .projects-cards {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 32px;
-        justify-content: center;
+      .project-accordion {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
         max-width: 1200px;
         margin: 0 auto;
       }
-      .project-card {
+      @media (min-width: 900px) {
+        .project-accordion {
+          grid-template-columns: repeat(2, 1fr);
+          align-items: stretch;
+        }
+      }
+      .accordion-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         background: #232329;
         border: 1px solid #333;
-        border-radius: 18px;
-        width: 340px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 24px #0002;
-        transition: transform 0.3s, box-shadow 0.3s;
-        opacity: 0;
-        transform: translateY(40px);
-        animation: fadeInUp 0.8s forwards;
+        transition: border-color 0.2s, box-shadow 0.2s;
       }
-      .project-card:nth-child(2) {
-        animation-delay: 0.2s;
+      .accordion-item.is-open,
+      .accordion-item-featured.is-open {
+        border-color: #38bdf866;
+        box-shadow: 0 4px 20px #38bdf818;
       }
-      .project-card:nth-child(3) {
-        animation-delay: 0.4s;
+      .accordion-item-featured.is-open {
+        border-color: #38bdf899;
+        box-shadow: 0 4px 24px #38bdf828;
       }
-      .project-card:hover {
-        transform: translateY(-8px) scale(1.03);
-        box-shadow: 0 8px 32px #38bdf855;
-      }
-      .project-img {
+      .accordion-header {
         width: 100%;
-        height: 180px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 88px;
+        box-sizing: border-box;
+        padding: 12px 16px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        text-align: left;
+        font-family: inherit;
+        flex-shrink: 0;
+      }
+      @media (min-width: 900px) {
+        .accordion-header {
+          min-height: 92px;
+        }
+      }
+      .accordion-header:hover {
+        background: #ffffff06;
+      }
+      .accordion-thumb {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
         object-fit: cover;
+        flex-shrink: 0;
         background: #111;
-        display: block;
       }
-      .project-img[src="estudaai_logo.png"],
-      .project-img[src="quantocustalogo.png"] {
-        width: 340px;
-        height: 220px;
+      .accordion-thumb.logo-thumb {
         object-fit: contain;
-        background: black;
-        padding: 30px;
-        object-position: center center;
-        margin: 0 auto;
-        display: block;
+        padding: 5px;
+        background: #0f172a;
       }
-      .project-content {
-        padding: 24px 18px 18px 18px;
+      .accordion-info {
+        flex: 1;
+        min-width: 0;
       }
-      .project-title {
-        font-size: 1.2rem;
+      .accordion-title-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 3px;
+      }
+      .accordion-title {
+        font-size: 0.98rem;
         font-weight: 700;
         color: #fff;
-        margin-bottom: 8px;
+        line-height: 1.3;
       }
-      .project-type {
-        color: #38bdf8;
-        font-size: 0.95rem;
-        margin-bottom: 12px;
+      .accordion-stack {
         display: block;
+        font-size: 0.78rem;
+        color: #38bdf8;
+        line-height: 1.35;
+      }
+      .accordion-chevron {
+        color: #38bdf8;
+        font-size: 0.7rem;
+        transition: transform 0.25s;
+        flex-shrink: 0;
+        opacity: 0.85;
+      }
+      .accordion-item.is-open .accordion-chevron {
+        transform: rotate(180deg);
+      }
+      .accordion-body {
+        display: none;
+        padding: 0 16px 16px;
+        border-top: 1px solid #333;
+        margin-top: 0;
+        animation: fadeIn 0.3s;
+      }
+      .accordion-item.is-open .accordion-body {
+        display: block;
+        flex: 1 1 auto;
+        padding-top: 14px;
+      }
+      .accordion-body .project-desc {
+        font-size: 0.92rem;
+        margin-bottom: 10px;
+      }
+      .accordion-body .project-role {
+        font-size: 0.88rem;
+        margin-bottom: 10px;
+        padding: 8px 10px;
+      }
+      .accordion-body .project-extra {
+        font-size: 0.88rem;
+        margin-bottom: 12px;
+      }
+      .project-links-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
       }
       .project-desc {
         color: #e0e0e0;
@@ -364,6 +487,86 @@
         font-size: 0.95rem;
         line-height: 1.65;
         margin: 0 0 14px;
+      }
+      .project-role {
+        color: #a5b4fc;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin: 0 0 12px;
+        padding: 10px 12px;
+        background: #1a1a22;
+        border-left: 3px solid #38bdf8;
+        border-radius: 0 8px 8px 0;
+      }
+      .project-role strong {
+        color: #38bdf8;
+      }
+      .project-badge-semester {
+        display: inline-block;
+        background: linear-gradient(90deg, #38bdf8, #a5b4fc);
+        color: #18181b;
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 999px;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+      }
+      .projects-category {
+        max-width: 1200px;
+        margin: 0 auto 40px;
+        padding: 0 24px;
+      }
+      .projects-category-title {
+        font-size: 1.6rem;
+        color: #38bdf8;
+        margin: 0 0 8px;
+        font-weight: 700;
+        border-bottom: 2px solid #333;
+        padding-bottom: 8px;
+      }
+      .projects-category-desc {
+        color: #b3b3b3;
+        font-size: 0.98rem;
+        margin: 0 0 24px;
+        line-height: 1.6;
+      }
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        font-size: 1.15rem;
+      }
+      .contact-links a {
+        color: #38bdf8;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.2s;
+      }
+      .contact-links a:hover {
+        color: #a5b4fc;
+        text-decoration: none;
+        background: #38bdf822;
+        border-color: #38bdf8;
+      }
+      .contact-pill {
+        padding: 10px 22px;
+        border: 1px solid #333;
+        border-radius: 999px;
+        background: #232329;
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+      }
+      .site-footer {
+        text-align: center;
+        padding: 24px 16px 32px;
+        color: #71717a;
+        font-size: 0.85rem;
+        border-top: 1px solid #27272a;
+        margin-top: 16px;
       }
       .project-link {
         display: inline-block;
@@ -391,31 +594,26 @@
         transform: scale(1.02);
       }
       .play-store-badge img {
-        height: 52px;
+        height: 44px;
         width: auto;
         vertical-align: middle;
       }
-      @media (max-width: 900px) {
-        .expertise-cards,
-        .projects-cards {
-          flex-direction: column;
-          align-items: center;
-        }
-        .card,
-        .project-card {
-          width: 90%;
-        }
-      }
       @media (max-width: 600px) {
-        .hero h1 {
-          font-size: 2.5rem;
+        .hero-title {
+          font-size: 1.85rem;
+        }
+        .hero h2 {
+          font-size: 0.88rem;
         }
         nav ul {
-          gap: 1rem;
+          gap: 0.55rem;
+        }
+        nav a {
+          font-size: 0.72rem;
         }
         .brand {
-          font-size: 1.1rem;
-          margin-right: 1rem;
+          font-size: 0.92rem;
+          margin-right: 0.6rem;
         }
         section {
           padding: 60px 8px 24px 8px;
@@ -423,7 +621,7 @@
       }
       @media (max-width: 1100px) {
         .expertise-cards {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         }
       }
       @media (max-width: 700px) {
@@ -433,17 +631,8 @@
       }
       @media (max-width: 500px) {
         .expertise-cards {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
         }
-      }
-      .project-details {
-        margin-top: 18px;
-        background: #232329;
-        border-radius: 12px;
-        padding: 18px;
-        color: #e0e0e0;
-        box-shadow: 0 2px 12px #0002;
-        animation: fadeIn 0.5s;
       }
       .mockup-images {
         display: flex;
@@ -452,22 +641,41 @@
         flex-wrap: wrap;
       }
       .mockup-images img {
-        border-radius: 10px;
+        border-radius: 8px;
         box-shadow: 0 2px 8px #0004;
-        width: 110px;
-        height: 210px;
+        width: 90px;
+        height: 170px;
         object-fit: cover;
+      }
+      @media (max-width: 600px) {
+        .accordion-title {
+          font-size: 0.92rem;
+        }
+        .accordion-stack {
+          font-size: 0.72rem;
+        }
       }
       .about-section {
         background: #20212b;
         border-radius: 18px;
         margin: 40px auto 32px auto;
-        padding: 36px 28px;
-        max-width: 900px;
+        padding: 36px 32px;
+        max-width: 1200px;
         color: #e0e0e0;
         box-shadow: 0 4px 24px #0002;
-        text-align: center;
         animation: fadeInUp 1.2s;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 12px 40px;
+        align-items: start;
+      }
+      .about-side-photo {
+        text-align: center;
+      }
+      .about-side-content {
+        text-align: left;
       }
       @keyframes fadeInUp {
         from {
@@ -479,9 +687,53 @@
           transform: translateY(0);
         }
       }
+      .about-photo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+      .about-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 15%;
+        box-shadow: 0 2px 24px #38bdf8cc, 0 0 0 8px #232329;
+        border: 4px solid #38bdf8;
+        background: #fff;
+        transition: transform 0.4s, box-shadow 0.4s;
+        animation: photoPop 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      @keyframes photoPop {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        80% {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .about-photo:hover {
+        transform: scale(1.07) rotate(-2deg);
+        box-shadow: 0 4px 32px #38bdf8, 0 0 0 12px #232329;
+        filter: brightness(1.08);
+      }
+      .about-completion {
+        font-size: 0.95rem;
+        color: #38bdf8;
+        font-weight: 600;
+        margin: 0 0 16px;
+      }
       .about-title {
-        font-size: 2.5rem;
-        margin-bottom: 12px;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        margin-bottom: 8px;
+        text-align: left;
         background: linear-gradient(90deg, #38bdf8 30%, #a5b4fc 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -496,17 +748,23 @@
         animation: fadeInUp 1.6s;
       }
       .about-lead {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
         color: #b3b3b3;
-        margin-bottom: 32px;
+        margin-bottom: 16px;
+        max-width: none;
       }
       .about-content {
-        font-size: 1.08rem;
-        line-height: 1.7;
-        margin-bottom: 32px;
+        font-size: 0.98rem;
+        line-height: 1.75;
+        margin-bottom: 20px;
+        max-width: none;
+        text-align: left;
       }
       .about-links {
-        margin-top: 24px;
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
       }
       .about-links a {
         color: #38bdf8;
@@ -520,9 +778,29 @@
         text-decoration: underline;
         color: #a5b4fc;
       }
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .about-side-content,
+        .about-title {
+          text-align: center;
+        }
+        .about-links {
+          justify-content: center;
+        }
+        .about-content {
+          text-align: left;
+        }
+      }
       @media (max-width: 600px) {
         .about-section {
-          padding: 18px 6px;
+          padding: 18px 12px;
+        }
+        .about-photo {
+          width: 140px;
+          height: 140px;
         }
       }
     </style>
@@ -535,8 +813,8 @@
       <ul>
         <li><a href="#home">// home</a></li>
         <li><a href="#sobre">// sobre</a></li>
-        <li><a href="#competencias">// expertise</a></li>
         <li><a href="#projetos">// work</a></li>
+        <li><a href="#competencias">// expertise</a></li>
         <li><a href="#contato">// contact</a></li>
       </ul>
     </nav>
@@ -563,62 +841,300 @@
         <div class="blob blob2"></div>
       </div>
       <h1 class="hero-title">ISAAC SOUZA</h1>
-      <h2>DESENVOLVEDOR FRONT-END</h2>
+      <h2>DESENVOLVEDOR FULL STACK</h2>
       <button
         class="scroll-down"
+        type="button"
+        aria-label="Ir para a seção Sobre mim"
         onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})"
       >
         &#8595;
       </button>
     </section>
     <section class="about-section" id="sobre">
-      <h1 class="about-title">Sobre Mim</h1>
-      <div class="about-lead">
-        Desenvolvedor Front-End apaixonado por criar experiências digitais
-        modernas, funcionais e acessíveis.
+      <div class="about-grid">
+        <div class="about-side-photo">
+          <div class="about-photo-wrapper">
+            <img src="img.jpg" alt="Isaac Souza" class="about-photo" />
+          </div>
+          <div class="about-links">
+            <a href="https://github.com/Isaac-Souza-Santos" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/isaacsouzasantos" target="_blank" rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+        <div class="about-side-content">
+          <h1 class="about-title">Sobre Mim</h1>
+          <p class="about-completion">
+            Conclusão do curso DSM — Fatec Jacareí: maio de 2026
+          </p>
+          <div class="about-lead">
+            Desenvolvedor Full Stack apaixonado por criar experiências digitais
+            modernas, funcionais e acessíveis.
+          </div>
+          <div class="about-content">
+            Olá! Sou Isaac Souza, de Jacareí/SP. Desenvolvedor Full Stack com experiência
+            em React, Next.js, TypeScript, Node.js, Flutter e Python — do front-end ao
+            back-end, APIs, bancos de dados e deploy em nuvem (Azure/AWS).<br /><br />
+            Cursando DSM na Fatec Jacareí (conclusão prevista: maio de 2026), participei de
+            projetos integradores com IoT, marketplaces com ML, chatbots WhatsApp e apps
+            publicados na Play Store. Também atuo no setor de saúde, criando interfaces seguras, acessíveis e de alta
+            performance.<br /><br />
+            Valorizo trabalho em equipe, comunicação clara e entrega com qualidade. Fora do
+            código, curto música, esportes e acompanhar tendências do universo tech.
+          </div>
+        </div>
       </div>
-      <div class="about-content">
-        Olá! Sou Isaac Souza, de Jacareí/SP. Minha paixão por tecnologia começou
-        cedo, mas foi no desenvolvimento web que encontrei meu propósito:
-        transformar ideias em interfaces que realmente fazem diferença na vida
-        das pessoas.<br /><br />
-        Atuo principalmente com React, Next.js e TypeScript, sempre buscando
-        unir performance, design e acessibilidade. Tenho experiência no setor de
-        saúde, onde aprendi a importância de criar soluções robustas, seguras e
-        intuitivas.<br /><br />
-        Gosto de desafios, de aprender coisas novas e de trabalhar em equipe.
-        Acredito que tecnologia é sobre pessoas, e por isso valorizo a
-        comunicação, o feedback e a colaboração.<br /><br />
-        Fora do código, curto música, esportes e explorar novas ferramentas e
-        tendências do universo tech.
+    </section>
+    <section class="projects-section" id="projetos">
+      <div class="projects-header-wrap">
+        <h2 class="projects-title">Meus Projetos</h2>
       </div>
-      <div class="about-links">
-        <a href="mailto:souza-sjc@hotmail.com">Email</a>
-        <a href="https://github.com/Isaac-Exon" target="_blank">GitHub</a>
-        <a href="http://www.linkedin.com/in/isaacsouzasantos" target="_blank"
-          >LinkedIn</a
-        >
+
+      <div class="projects-category">
+        <h3 class="projects-category-title">Acadêmicos</h3>
+        <p class="projects-category-desc">
+          Projetos desenvolvidos durante o curso de DSM na Fatec Jacareí, em
+          equipe multidisciplinar.
+        </p>
+        <div class="project-accordion">
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb" src="https://placehold.co/96x96/232329/fff?text=Scrum" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">Plataforma Educacional sobre Scrum</span>
+                  <span class="project-badge-semester">1DSM</span>
+                </span>
+                <span class="accordion-stack">TypeScript • HTML • CSS</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                Plataforma web para ensino do método ágil Scrum, com trilhas de
+                aprendizado, provas interativas, sistema de pontuação e perfil de usuário.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> Desenvolvimento das telas de trilhas e
+                avaliações, implementação do sistema de pontuação no front-end e integração
+                com autenticação e perfil do usuário.
+              </p>
+              <p class="project-extra">
+                Módulos teóricos, vídeos, avaliações interativas, cadastro/login e perfil de desempenho.
+              </p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb" src="https://placehold.co/96x96/232329/fff?text=Geo" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">Gestão de Atividades Geográficas</span>
+                  <span class="project-badge-semester">2DSM</span>
+                </span>
+                <span class="accordion-stack">React • Tailwind CSS • MongoDB</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                Sistema web para designação e acompanhamento de tarefas geográficas, com mapas
+                interativos, histórico e autenticação de usuários.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> Criação das interfaces de mapas e painéis de
+                tarefas, componentes reutilizáveis em React e consumo de APIs para histórico e status.
+              </p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb" src="https://placehold.co/96x96/232329/fff?text=Health" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">Health App</span>
+                  <span class="project-badge-semester">3DSM</span>
+                </span>
+                <span class="accordion-stack">React Native • TypeScript • MongoDB</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                Aplicativo de saúde inspirado no Samsung Health, com monitoramento de atividades
+                físicas, sono, alimentação, hidratação e metas de bem-estar.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> Prototipação e implementação das telas de dashboard,
+                registro de atividades e metas, navegação entre módulos e gráficos de progresso.
+              </p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb" src="https://placehold.co/96x96/0ea5e9/fff?text=DSG" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">Rastreamento de Derivadores Oceanográficos (IoT)</span>
+                  <span class="project-badge-semester">4DSM</span>
+                </span>
+                <span class="accordion-stack">React Native • TypeScript • Node.js • GPS • IoT</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                Solução IoT para rastreamento de derivadores oceanográficos usados em estudos de
+                correntes e dispersão, com coleta de coordenadas GPS, transmissão via rede celular,
+                armazenamento em banco de dados e visualização em mapas interativos no app móvel.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> Scrum Master da equipe DSG (sprints, backlog e
+                acompanhamento da equipe), com contribuição no app React Native — mapas interativos,
+                histórico por derivador e integração com a API de rastreamento em tempo real.
+              </p>
+              <div class="project-links-row">
+                <a class="project-link" href="https://github.com/FPbueno/DSG_4_ABP" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb logo-thumb" src="worcaflow_logo.png" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">WorcaFlow</span>
+                  <span class="project-badge-semester">5DSM</span>
+                </span>
+                <span class="accordion-stack">Flutter • FastAPI • Supabase • ML</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                Marketplace de serviços residenciais que conecta clientes a prestadores, com
+                solicitações, orçamentos, avaliações e previsão de preços por Machine Learning.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> Desenvolvimento do app Flutter (telas de cliente
+                e prestador, tema dark, navegação por perfil), integração com API REST e fluxos de
+                solicitações, orçamentos e histórico.
+              </p>
+              <div class="project-links-row">
+                <a class="project-link" href="https://github.com/FPbueno/DSG_5" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion-item accordion-item-featured is-open">
+            <button class="accordion-header" type="button" aria-expanded="true" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb logo-thumb" src="procon-bot.svg" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">Bot Procon Jacareí — WhatsApp</span>
+                  <span class="project-badge-semester">6DSM</span>
+                </span>
+                <span class="accordion-stack">TypeScript • Node.js • React • Azure</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                Chatbot de atendimento ao consumidor via WhatsApp, com orientações (CDC), agendamento
+                LGPD, horários livres, painel interno para atendentes e métricas de protocolo.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> Painel interno em React + TypeScript (dashboard,
+                filtros, métricas, login Microsoft), integração com API REST, fluxos de agendamento
+                e deploy em Azure com CI/CD.
+              </p>
+              <div class="project-links-row">
+                <a class="project-link" href="https://github.com/Isaac-Souza-Santos/abp_6" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+                <a class="project-link" href="https://www.youtube.com/watch?v=t9qXJUcBCzI" target="_blank" rel="noopener noreferrer">Apresentação (YouTube)</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="projects-category">
+        <h3 class="projects-category-title">Profissionais</h3>
+        <p class="projects-category-desc">
+          Desenvolvedor Full Stack no setor de saúde, com foco em interfaces seguras,
+          acessíveis e de alta performance. Projetos corporativos internos não são exibidos por
+          confidencialidade.
+        </p>
+      </div>
+
+      <div class="projects-category">
+        <h3 class="projects-category-title">Pessoais</h3>
+        <p class="projects-category-desc">
+          Aplicativos desenvolvidos de forma independente e publicados na Google Play Store.
+        </p>
+        <div class="project-accordion">
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb logo-thumb" src="estudaai_logo.png" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">EstudaAí</span>
+                </span>
+                <span class="accordion-stack">Android • FastAPI • IA • Gamificação</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                Plataforma educacional gamificada com IA, aprendizado personalizado, XP e níveis.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> App Android, interfaces de lições e gamificação,
+                integração com API de IA e publicação na Google Play Store.
+              </p>
+              <a class="play-store-badge" href="https://play.google.com/store/apps/details?id=com.estudaai.app" target="_blank" rel="noopener noreferrer" aria-label="Baixar EstudaAí na Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play" width="162" height="63" />
+              </a>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+              <img class="accordion-thumb logo-thumb" src="quantocustalogo.png" alt="" />
+              <span class="accordion-info">
+                <span class="accordion-title-row">
+                  <span class="accordion-title">Quanto Custa</span>
+                </span>
+                <span class="accordion-stack">Flutter • Material 3 • AdMob • SQLite</span>
+              </span>
+              <span class="accordion-chevron">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="project-desc">
+                App para cálculo de custos de receitas, precificação, estoque, vendas e dashboard
+                com faturamento e indicadores.
+              </div>
+              <p class="project-role">
+                <strong>Minha participação:</strong> Projeto autoral — concepção, UI, desenvolvimento
+                Flutter, banco SQLite, AdMob e publicação na Play Store.
+              </p>
+              <a class="play-store-badge" href="https://play.google.com/store/apps/details?id=com.quantocusta.calculadora" target="_blank" rel="noopener noreferrer" aria-label="Baixar Quanto Custa na Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play" width="162" height="63" />
+              </a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
     <section id="competencias">
-      <h2
-        style="
-          text-align: center;
-          font-size: 3rem;
-          color: #fff;
-          margin-bottom: 48px;
-          font-family: 'Poppins', sans-serif;
-        "
-      >
-        <span
-          style="
-            border-bottom: 4px solid #38bdf8;
-            padding-bottom: 8px;
-            display: inline-block;
-          "
-          >Minhas Competências</span
-        >
-      </h2>
+      <div class="section-header">
+        <h2 class="section-title">Minhas Competências</h2>
+      </div>
       <div class="expertise-cards">
         <div class="card">
           <div class="icon">
@@ -769,6 +1285,18 @@
         <div class="card">
           <div class="icon">
             <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node.js"
+              width="36"
+              height="36"
+            />
+          </div>
+          <h3>Node.js</h3>
+          <p>APIs, bots e back-end JavaScript.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
               alt="Flutter"
               width="36"
@@ -780,285 +1308,44 @@
         </div>
       </div>
     </section>
-    <section class="projects-section" id="projetos">
-      <h2 class="projects-title">Meus Projetos</h2>
-      <div class="projects-cards">
-        <div class="project-card">
-          <img
-            class="project-img"
-            src="https://placehold.co/340x180/232329/fff?text=Scrum+Edu"
-            alt="Plataforma Educacional Scrum"
-          />
-          <div class="project-content">
-            <div class="project-title">Plataforma Educacional sobre Scrum</div>
-            <span class="project-type"> • TypeScript • HTML </span>
-            <div class="project-desc">
-              Plataforma web para ensino do método ágil Scrum, com trilhas de
-              aprendizado, provas interativas, sistema de pontuação e perfil de
-              usuário.
-            </div>
-            <button class="project-link" onclick="toggleDetails(this)">
-              Ver Projeto
-            </button>
-            <div class="project-details" style="display: none">
-              <p>
-                Plataforma com módulos teóricos, vídeos, avaliações interativas,
-                sistema de pontuação, cadastro/login e perfil de desempenho.
-              </p>
-              <div class="mockup-images">
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Login"
-                  alt="Tela Login"
-                />
-                <img
-                  src="https://placehold.co/180x340/232329/fff?text=Trilha"
-                  alt="Tela Trilha"
-                />
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Prova"
-                  alt="Tela Prova"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            class="project-img"
-            src="https://placehold.co/340x180/232329/fff?text=Geo+Gestão"
-            alt="Gestão de Atividades Geográficas"
-          />
-          <div class="project-content">
-            <div class="project-title">Gestão de Atividades Geográficas</div>
-            <span class="project-type">React • Tailwind CSS • MongoDB</span>
-            <div class="project-desc">
-              Sistema web para designação e acompanhamento de tarefas
-              geográficas, com mapas interativos, histórico e autenticação de
-              usuários.
-            </div>
-            <button class="project-link" onclick="toggleDetails(this)">
-              Ver Projeto
-            </button>
-            <div class="project-details" style="display: none">
-              <p>
-                Permite gestores criarem tarefas em mapas, analistas
-                visualizarem e marcarem áreas, histórico de tarefas e
-                autenticação diferenciada.
-              </p>
-              <div class="mockup-images">
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Mapa"
-                  alt="Tela Mapa"
-                />
-                <img
-                  src="https://placehold.co/180x340/232329/fff?text=Tarefas"
-                  alt="Tela Tarefas"
-                />
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Histórico"
-                  alt="Tela Histórico"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            class="project-img"
-            src="https://placehold.co/340x180/232329/fff?text=Boias+IoT"
-            alt="Monitoramento de Boias Inteligentes"
-          />
-          <div class="project-content">
-            <div class="project-title">
-              Monitoramento de Navegação e Boias Inteligentes
-            </div>
-            <span class="project-type"
-              >React Native • Typescript • MongoDb</span
-            >
-            <div class="project-desc">
-              App móvel para rastreamento de boias e condições marítimas em
-              tempo real, com alertas, histórico e integração com sensores IoT.
-            </div>
-            <button class="project-link" onclick="toggleDetails(this)">
-              Ver Projeto
-            </button>
-            <div class="project-details" style="display: none">
-              <p>
-                Visualização em tempo real da boia, dados climáticos, alertas,
-                histórico de rotas e integração com sensores marítimos.
-              </p>
-              <div class="mockup-images">
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Mapa"
-                  alt="Tela Mapa"
-                />
-                <img
-                  src="https://placehold.co/180x340/232329/fff?text=Alertas"
-                  alt="Tela Alertas"
-                />
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Histórico"
-                  alt="Tela Histórico"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-card">
-          <img class="project-img" src="estudaai_logo.png" alt="EstudaAí" />
-          <div class="project-content">
-            <div class="project-title">EstudaAí</div>
-            <span class="project-type"
-              >Android • FastAPI • IA • Gamificação</span
-            >
-            <div class="project-desc">
-              Plataforma educacional gamificada com IA que combina aprendizado
-              personalizado, sistema de XP e níveis, para tornar os estudos mais
-              eficientes e divertidos.
-            </div>
-            <p class="project-extra">
-              <strong>Disponível na Google Play Store:</strong> App educacional
-              com lições personalizadas por IA, sistema gamificado com XP e
-              conquistas, conteúdo para todos os níveis educacionais.
-            </p>
-            <a
-              class="play-store-badge"
-              href="https://play.google.com/store/apps/details?id=com.estudaai.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Baixar EstudaAí na Google Play"
-            >
-              <img
-                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                alt="Disponível no Google Play"
-                width="162"
-                height="63"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            class="project-img"
-            src="quantocustalogo.png"
-            alt="Quanto Custa"
-          />
-          <div class="project-content">
-            <div class="project-title">Quanto Custa</div>
-            <span class="project-type"
-              >Flutter • Material 3 • AdMob • armazenamento local</span
-            >
-            <div class="project-desc">
-              App para cálculo de custos de receitas, precificação com margem,
-              controle de estoque com alertas, vendas com baixa automática e
-              dashboard com faturamento e indicadores.
-            </div>
-            <p class="project-extra">
-              Gestão de ingredientes (preço, data, mercado), receitas com custo
-              automático, produtos com margem de lucro, estoque com barra de
-              progresso e notificações, vendas e clientes com histórico. Dashboard
-              com faturamento mensal, custo e margem médios e alertas de estoque
-              baixo.
-            </p>
-            <a
-              class="play-store-badge"
-              href="https://play.google.com/store/apps/details?id=com.quantocusta.calculadora"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Baixar Quanto Custa na Google Play"
-            >
-              <img
-                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                alt="Disponível no Google Play"
-                width="162"
-                height="63"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            class="project-img"
-            src="https://placehold.co/340x180/232329/fff?text=Health+App"
-            alt="Health App"
-          />
-          <div class="project-content">
-            <div class="project-title">Health App</div>
-            <span class="project-type"
-              >React Native • TypeScript • MongoDB</span
-            >
-            <div class="project-desc">
-              Aplicativo de saúde inspirado no Samsung Health, com monitoramento
-              de atividades físicas, registro de sono, alimentação, hidratação e
-              acompanhamento de metas de bem-estar.
-            </div>
-            <button class="project-link" onclick="toggleDetails(this)">
-              Ver Projeto
-            </button>
-            <div class="project-details" style="display: none">
-              <p>
-                Permite registrar atividades físicas, sono, alimentação,
-                hidratação, gráficos de progresso, metas e integração com
-                dispositivos.
-              </p>
-              <div class="mockup-images">
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Dashboard"
-                  alt="Tela Dashboard"
-                />
-                <img
-                  src="https://placehold.co/180x340/232329/fff?text=Atividades"
-                  alt="Tela Atividades"
-                />
-                <img
-                  src="https://placehold.co/180x340/38bdf8/fff?text=Metas"
-                  alt="Tela Metas"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section id="contato">
-      <h2
-        style="
-          text-align: center;
-          font-size: 2.2rem;
-          color: #fff;
-          margin-bottom: 32px;
-          font-family: 'Poppins', sans-serif;
-        "
-      >
-        <span
-          style="
-            border-bottom: 4px solid #38bdf8;
-            padding-bottom: 8px;
-            display: inline-block;
-          "
-          >Contato</span
-        >
-      </h2>
-      <div style="text-align: center; font-size: 1.2rem">
-        📧
+      <div class="section-header">
+        <h2 class="section-title">Contato</h2>
+      </div>
+      <div class="contact-links">
         <a
-          href="mailto:souza-sjc@hotmail.com"
-          style="color: #38bdf8; text-decoration: none"
-          >souza-sjc@hotmail.com</a
-        ><br />
-        💼
-        <a href="#" style="color: #38bdf8; text-decoration: none">LinkedIn</a>
+          class="contact-pill"
+          href="https://www.linkedin.com/in/isaacsouzasantos"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+        <a
+          class="contact-pill"
+          href="https://github.com/Isaac-Souza-Santos"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
       </div>
     </section>
+    <footer class="site-footer">
+      © 2026 Isaac Souza Santos · Desenvolvedor Full Stack · Fatec Jacareí DSM
+    </footer>
     <script>
-      function toggleDetails(btn) {
-        const details = btn.nextElementSibling;
-        if (details.style.display === "none" || details.style.display === "") {
-          details.style.display = "block";
-          btn.textContent = "Ocultar Projeto";
-        } else {
-          details.style.display = "none";
-          btn.textContent = "Ver Projeto";
+      function toggleAccordion(btn) {
+        const item = btn.closest(".accordion-item");
+        const accordion = btn.closest(".project-accordion");
+        const isOpen = item.classList.contains("is-open");
+
+        accordion.querySelectorAll(".accordion-item.is-open").forEach((el) => {
+          el.classList.remove("is-open");
+          el.querySelector(".accordion-header").setAttribute("aria-expanded", "false");
+        });
+
+        if (!isOpen) {
+          item.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
         }
       }
     </script>
