@@ -11,6 +11,7 @@
 | **GitHub Pages (Portfólio)** | https://fatec-jacarei-dsm-portfolio.github.io/ra2581392323049/ |
 | **Vídeo de apresentação do portfólio (YouTube)** | https://www.youtube.com/watch?v=t9qXJUcBCzI |
 | **Vídeo de apresentação — 6DSM (Sprint 1)** | https://www.youtube.com/watch?v=91aUjvrli_g |
+| **Vídeo — minha participação no 6DSM (Bot Procon)** | https://youtu.be/XspAGIpjZxE |
 | **Vídeo de apresentação — 4DSM (Sprint 1)** | https://www.youtube.com/watch?v=AV_2AfgMPY4 |
 | **Repositório do projeto 6DSM (ABP6)** | https://github.com/Isaac-Souza-Santos/abp_6 |
 | **Repositório do projeto 5DSM (ABP5 — WorcaFlow)** | https://github.com/FPbueno/DSG_5 |
